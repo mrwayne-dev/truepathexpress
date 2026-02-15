@@ -1,0 +1,19 @@
+# truepathexpress - Clean URLs
+RewriteEngine On
+RewriteBase /
+
+# Remove .php extension
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [L]
+
+# Route to index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [L,QSA]
+
+# Security
+<FilesMatch "^.(env|gitignore|htaccess)">
+    Order allow,deny
+    Deny from all
+</FilesMatch>

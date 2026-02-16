@@ -63,6 +63,26 @@
         max-height: 400px;
     }
 
+    /* Mobile menu overlay */
+    .navbar__menu::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(22, 35, 42, 0.8);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity var(--transition-smooth), visibility var(--transition-smooth);
+        z-index: -1;
+    }
+
+    .navbar__menu.open::before {
+        opacity: 1;
+        visibility: visible;
+    }
+
     .navbar__menu {
         position: fixed;
         top: 0;
@@ -76,19 +96,69 @@
         gap: var(--space-lg);
         transition: right var(--transition-smooth);
         box-shadow: var(--shadow-xl);
+        overflow-y: auto;
+        z-index: 1001;
     }
 
     .navbar__menu.open {
         right: 0;
     }
 
+    /* Mobile menu links - white text on dark background */
+    .navbar__menu .navbar__link {
+        color: var(--color-white);
+        width: 100%;
+        padding: var(--space-sm) 0;
+    }
+
+    .navbar__menu .navbar__link::after {
+        background-color: var(--color-accent);
+    }
+
+    .navbar__menu .navbar__link:hover,
+    .navbar__menu .navbar__link.active {
+        color: var(--color-accent);
+    }
+
     .navbar__cta {
-        margin-left: 0;
-        margin-top: var(--space-lg);
+        display: block;
+        margin-top: var(--space-xl);
+        padding-top: var(--space-xl);
+        border-top: 1px solid var(--color-gray-600);
+    }
+
+    .navbar__cta .btn {
+        width: 100%;
+        justify-content: center;
     }
 
     .navbar__toggle {
         display: flex;
+        position: relative;
+        z-index: 1002;
+    }
+
+    /* Toggle button - white when menu is open */
+    .navbar__toggle.active span {
+        background: var(--color-white);
+    }
+
+    /* Toggle animation - Hamburger to X */
+    .navbar__toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    .navbar__toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .navbar__toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    /* Prevent body scroll when menu is open */
+    body.menu-open {
+        overflow: hidden;
     }
 
     .footer__grid {

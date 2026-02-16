@@ -39,6 +39,18 @@ try {
     $stmt = $db->prepare("INSERT INTO users (username, email, password) VALUES (:username, :email, :password)");
     $stmt->execute(['username' => $username, 'email' => $email, 'password' => $hashedPassword]);
 
+    // Send welcome email
+    try {
+        require_once '../utilities/email_templates.php';
+        require_once '../../config/email.php';
+
+        $emailBody = getAdminRegisterEmail($username, $email);
+        $mailer = new Mailer();
+        $mailer->send($email, 'Welcome to TruePath Express Admin Portal', $emailBody);
+    } catch (Exception $e) {
+        error_log("Welcome email failed for: $email - " . $e->getMessage());
+    }
+
     echo json_encode(['success' => true, 'message' => 'Registration successful']);
 } catch (PDOException $e) {
     http_response_code(500);

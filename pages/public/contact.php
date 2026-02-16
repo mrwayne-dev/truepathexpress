@@ -3,7 +3,7 @@
 
 <!-- Hero -->
 <section class="hero hero--page">
-    <img src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1920&q=80" alt="Contact us" class="hero__bg">
+    <img src="/assets/images/sections/contact-bg.png" alt="Contact us" class="hero__bg">
     <div class="hero__overlay"></div>
     <div class="hero__content">
         <span class="hero__label"><i class="ph-bold ph-chat-circle"></i> Get In Touch</span>

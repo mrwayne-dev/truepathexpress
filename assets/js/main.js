@@ -45,6 +45,8 @@ document.addEventListener('DOMContentLoaded', function () {
         navToggle.addEventListener('click', function () {
             navToggle.classList.toggle('active');
             navMenu.classList.toggle('open');
+            // Lock/unlock body scroll
+            document.body.classList.toggle('menu-open');
         });
 
         // Close menu on link click
@@ -52,14 +54,26 @@ document.addEventListener('DOMContentLoaded', function () {
             link.addEventListener('click', function () {
                 navToggle.classList.remove('active');
                 navMenu.classList.remove('open');
+                document.body.classList.remove('menu-open');
             });
         });
+
+        // Close menu on CTA button click
+        const ctaBtn = navMenu.querySelector('.navbar__cta .btn');
+        if (ctaBtn) {
+            ctaBtn.addEventListener('click', function () {
+                navToggle.classList.remove('active');
+                navMenu.classList.remove('open');
+                document.body.classList.remove('menu-open');
+            });
+        }
 
         // Close menu on outside click
         document.addEventListener('click', function (e) {
             if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
                 navToggle.classList.remove('active');
                 navMenu.classList.remove('open');
+                document.body.classList.remove('menu-open');
             }
         });
     }

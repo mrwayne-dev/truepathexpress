@@ -3,7 +3,7 @@
 
 <!-- Hero -->
 <section class="hero hero--page">
-    <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=1920&q=80" alt="Logistics fleet" class="hero__bg">
+    <img src="/assets/images/sections/about-bg.png" alt="Logistics fleet" class="hero__bg">
     <div class="hero__overlay"></div>
     <div class="hero__content">
         <span class="hero__label"><i class="ph-bold ph-info"></i> About TruePath Express</span>
@@ -17,7 +17,7 @@
     <div class="container">
         <div class="split">
             <div class="split__image">
-                <img src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=800&q=80" alt="Company operations">
+                <img src="/assets/images/sections/container.jpg" alt="Company operations">
             </div>
             <div class="split__content">
                 <span class="section-label">Our Story</span>
@@ -192,7 +192,7 @@
     <div class="container">
         <h2>Ready to Experience the TruePath Difference?</h2>
         <p>Ship with confidence knowing your packages are in trusted hands.</p>
-        <a href="/pages/public/contact.php" class="btn btn--primary btn--lg">
+        <a href="/contact" class="btn btn--primary btn--lg">
             <i class="ph-bold ph-chat-circle"></i> Get In Touch
         </a>
     </div>

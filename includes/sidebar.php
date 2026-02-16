@@ -38,7 +38,7 @@ $currentPage = basename($_SERVER['PHP_SELF'], '.php');
         <!-- Sidebar -->
         <aside class="admin-sidebar" id="adminSidebar">
             <div class="sidebar-logo">
-                <a href="/admin/dashboard">
+                <a href="/admin.dashboard">
                     <img src="/assets/images/logo/3.png" alt="TruePath Express">
                 </a>
                 <button class="sidebar-close" id="sidebarClose">
@@ -50,19 +50,19 @@ $currentPage = basename($_SERVER['PHP_SELF'], '.php');
                 <div class="sidebar-heading">Navigation</div>
                 <ul>
                     <li>
-                        <a href="/pages/admin/dashboard.php" class="sidebar-link <?php echo $currentPage === 'dashboard' ? 'active' : ''; ?>">
+                        <a href="/admin.dashboard" class="sidebar-link <?php echo $currentPage === 'dashboard' ? 'active' : ''; ?>">
                             <i class="ph-bold ph-squares-four"></i>
                             <span>Dashboard</span>
                         </a>
                     </li>
                     <li>
-                        <a href="/pages/admin/packages.php" class="sidebar-link <?php echo $currentPage === 'packages' ? 'active' : ''; ?>">
+                        <a href="/admin.packages" class="sidebar-link <?php echo $currentPage === 'packages' ? 'active' : ''; ?>">
                             <i class="ph-bold ph-package"></i>
                             <span>Packages</span>
                         </a>
                     </li>
                     <li>
-                        <a href="/pages/admin/transaction.php" class="sidebar-link <?php echo $currentPage === 'transaction' ? 'active' : ''; ?>">
+                        <a href="/admin.transactions" class="sidebar-link <?php echo $currentPage === 'transaction' ? 'active' : ''; ?>">
                             <i class="ph-bold ph-credit-card"></i>
                             <span>Transactions</span>
                         </a>
@@ -100,9 +100,9 @@ $currentPage = basename($_SERVER['PHP_SELF'], '.php');
                             </span>
                         </button>
                         <div class="header-dropdown" id="userDropdown">
-                            <a href="/pages/admin/dashboard.php">Dashboard</a>
-                            <a href="/pages/admin/packages.php">Packages</a>
-                            <a href="/pages/admin/transaction.php">Transactions</a>
+                            <a href="/admin.dashboard">Dashboard</a>
+                            <a href="/admin.packages">Packages</a>
+                            <a href="/admin.transactions">Transactions</a>
                             <div class="dropdown-divider"></div>
                             <a href="#" class="text-danger" id="dropdownLogout">Log out</a>
                         </div>

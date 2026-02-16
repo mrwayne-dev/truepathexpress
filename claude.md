@@ -189,6 +189,11 @@ Payment Flow:
 Webhook:
 api/webhooks/webhook.php
 Must verify IPN key before processing.
+we have to provide nowpayments link to our webhook
+
+API KEY - A83Q59B-TN0MMMF-HRXGB1D-CVSZDJ8
+PUBLIC KEY - 6fb89079-a6ca-4691-b7cd-089ab2cc0b4b
+IPN KEY - ekWpjdc59WMkPz5f7W1P1vZJe/Z8VHjA
 
 Never expose private keys in frontend.
 

@@ -3,17 +3,17 @@
 
 <!-- Hero Section -->
 <section class="hero">
-    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1920&q=80" alt="Logistics" class="hero__bg">
+    <img src="/assets/images/sections/home-bg.png" alt="Logistics" class="hero__bg">
     <div class="hero__overlay"></div>
     <div class="hero__content">
         <span class="hero__label"><i class="ph-bold ph-package"></i> Global Logistics Solutions</span>
         <h1 class="hero__title">Delivering Trust Across Every Mile</h1>
         <p class="hero__desc">Fast, secure, and reliable consignment services worldwide. Track your packages in real-time and experience logistics done right.</p>
         <div class="hero__actions">
-            <a href="/pages/public/tracking.php" class="btn btn--primary btn--lg">
+            <a href="/tracking" class="btn btn--primary btn--lg">
                 <i class="ph-bold ph-magnifying-glass"></i> Track Your Package
             </a>
-            <a href="/pages/public/service.php" class="btn btn--outline-light btn--lg">
+            <a href="/services" class="btn btn--outline-light btn--lg">
                 Our Services
             </a>
         </div>
@@ -112,7 +112,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="/pages/public/about.php" class="btn btn--primary">Learn More</a>
+                <a href="/about" class="btn btn--primary">Learn More</a>
             </div>
         </div>
     </div>
@@ -153,7 +153,7 @@
     <div class="container">
         <h2>Ready to Ship With Confidence?</h2>
         <p>Join thousands of satisfied customers who trust TruePath Express for their logistics needs.</p>
-        <a href="/pages/public/tracking.php" class="btn btn--primary btn--lg">
+        <a href="/tracking" class="btn btn--primary btn--lg">
             <i class="ph-bold ph-package"></i> Get Started Today
         </a>
     </div>

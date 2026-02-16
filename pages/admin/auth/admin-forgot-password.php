@@ -261,7 +261,7 @@
         <!-- Form Side -->
         <div class="auth__form-side">
             <div class="auth__form-wrap">
-                <a href="/pages/public/index.php" class="auth__logo">
+                <a href="/" class="auth__logo">
                     <img src="/assets/images/logo/3.png" alt="TruePath Express">
                     <span>TruePath Express</span>
                 </a>
@@ -297,7 +297,7 @@
                     </button>
                 </form>
 
-                <a href="/pages/admin/auth/admin-login.php" class="auth__back">
+                <a href="/admin.auth.login" class="auth__back">
                     <i class="ph-bold ph-arrow-left"></i> Back to Sign In
                 </a>
             </div>
@@ -315,7 +315,30 @@
         </div>
     </div>
 
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
     <script>
+        // Toast notification function
+        function showToast(message, type = 'success') {
+            const container = document.getElementById('toastContainer');
+            const toast = document.createElement('div');
+            toast.className = `toast toast--${type}`;
+            toast.innerHTML = `
+                <i class="ph-bold ${type === 'success' ? 'ph-check-circle' : type === 'error' ? 'ph-x-circle' : 'ph-info'}"></i>
+                <span>${message}</span>
+            `;
+
+            container.appendChild(toast);
+
+            setTimeout(() => toast.classList.add('show'), 10);
+
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => toast.remove(), 400);
+            }, 4000);
+        }
+
         document.getElementById('forgotForm').addEventListener('submit', async function (e) {
             e.preventDefault();
 
@@ -341,17 +364,20 @@
 
                 var data = await res.json();
 
-                if (data.success) {
+                if (data.status === 'success' || data.success) {
                     successMsg.textContent = data.message || 'Reset link sent! Check your email inbox.';
                     successBox.classList.add('show');
+                    showToast('Password reset link sent! Check your email.', 'success');
                     document.getElementById('forgotForm').reset();
                 } else {
                     errorMsg.textContent = data.message || 'Something went wrong';
                     errorBox.classList.add('show');
+                    showToast(data.message || 'Something went wrong', 'error');
                 }
             } catch (err) {
                 errorMsg.textContent = 'Connection error. Please try again.';
                 errorBox.classList.add('show');
+                showToast('Connection error. Please try again.', 'error');
             }
 
             btn.disabled = false;

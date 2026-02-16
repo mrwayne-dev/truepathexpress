@@ -78,7 +78,9 @@
     <div class="container">
         <div class="split split--reverse">
             <div class="split__image">
-                <img src="https://images.unsplash.com/photo-1601584115197-04eefb3b1484?w=800&q=80" alt="Delivery service">
+                <video autoplay muted loop playsinline>
+                    <source src="/assets/images/sections/animation.mp4" type="video/mp4">
+                </video>
             </div>
             <div class="split__content">
                 <span class="section-label">Why TruePath</span>
@@ -123,7 +125,7 @@
     <div class="container">
         <h2>Need a Custom Shipping Solution?</h2>
         <p>Contact our logistics team and we'll create a tailored plan for your consignment needs.</p>
-        <a href="/pages/public/contact.php" class="btn btn--primary btn--lg">
+        <a href="/contact" class="btn btn--primary btn--lg">
             <i class="ph-bold ph-chat-circle"></i> Contact Us
         </a>
     </div>

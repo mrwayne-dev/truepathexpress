@@ -55,7 +55,7 @@
         <div class="card">
             <div class="card-header">
                 <span class="card-title">Recent Transactions</span>
-                <a href="/pages/admin/transaction.php" class="btn btn-link">
+                <a href="/admin.transactions" class="btn btn-link">
                     View All <i class="ph-bold ph-arrow-right"></i>
                 </a>
             </div>
@@ -90,11 +90,11 @@
             </div>
             <div class="card-body">
                 <div class="quick-actions">
-                    <a href="/pages/admin/packages.php" class="btn btn-primary btn-lg btn-full">
+                    <a href="/admin.packages" class="btn btn-primary btn-lg btn-full">
                         <i class="ph-bold ph-plus-circle"></i>
                         Create a Package
                     </a>
-                    <a href="/pages/admin/transaction.php" class="btn btn-secondary btn-lg btn-full">
+                    <a href="/admin.transactions" class="btn btn-secondary btn-lg btn-full">
                         <i class="ph-bold ph-credit-card"></i>
                         View Transactions
                     </a>

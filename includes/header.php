@@ -15,11 +15,10 @@
                 <li><a href="/services" class="navbar__link <?php echo basename($_SERVER['PHP_SELF']) === 'services.php' ? 'active' : ''; ?>">Services</a></li>
                 <li><a href="/tracking" class="navbar__link <?php echo basename($_SERVER['PHP_SELF']) === 'tracking.php' ? 'active' : ''; ?>">Tracking</a></li>
                 <li><a href="/contact" class="navbar__link <?php echo basename($_SERVER['PHP_SELF']) === 'contact.php' ? 'active' : ''; ?>">Contact</a></li>
+                <li class="navbar__cta">
+                    <a href="/tracking" class="btn btn--primary btn--sm">Track Package</a>
+                </li>
             </ul>
-
-            <div class="navbar__cta">
-                <a href="/tracking" class="btn btn--primary btn--sm">Track Package</a>
-            </div>
 
             <button class="navbar__toggle" id="navToggle" aria-label="Toggle menu">
                 <span></span>

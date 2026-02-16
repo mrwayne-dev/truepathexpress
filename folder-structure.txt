@@ -4,11 +4,19 @@ D:\MRWAYNE\WEB_DEV\TRUEPATHEXPRESS
 |   .env
 |   .gitattributes
 |   .gitignore
+|   .hintrc
 |   .htaccess
+|   claude.md
+|   composer.json
+|   composer.lock
 |   folder-structure.txt
 |   index.php
+|   modal-style.png
 |   README.md
 |   
++---.claude
+|       settings.local.json
+|       
 +---api
 |   +---admin-dashboard
 |   |       dashboard.php
@@ -25,9 +33,15 @@ D:\MRWAYNE\WEB_DEV\TRUEPATHEXPRESS
 |   +---payments
 |   |       now-payment.php
 |   |       
+|   +---tracking
+|   |       tracking.php
+|   |       
 |   +---utilities
+|   |       auth-check.php
 |   |       contact.php
 |   |       email_templates.php
+|   |       image-upload.php
+|   |       tracking-id.php
 |   |       
 |   \---webhooks
 |           webhook.php
@@ -38,12 +52,7 @@ D:\MRWAYNE\WEB_DEV\TRUEPATHEXPRESS
 |   |   |   responsive.css
 |   |   |   
 |   |   \---admin
-|   |           animate.min.css
-|   |           animation.css
-|   |           bootstrap-select.min.css
-|   |           bootstrap.css
 |   |           styles.css
-|   |           swiper-bundle.min.css
 |   |           
 |   +---favicon
 |   |       android-chrome-192x192.png
@@ -18273,48 +18282,11 @@ D:\MRWAYNE\WEB_DEV\TRUEPATHEXPRESS
 |   \---js
 |       |   contact.js
 |       |   main.js
-|       |   packages.js
 |       |   payment.js
-|       |   transactions.js
 |       |   
 |       \---admin
-|           |   bootstrap-select.min.js
-|           |   bootstrap.min.js
-|           |   carousel.js
-|           |   countto.js
-|           |   jquery.min.js
-|           |   main.js
-|           |   swiper-bundle.min.js
-|           |   switcher.js
-|           |   theme-settings.js
-|           |   
-|           \---apexcharts
-|                   apexcharts.js
-|                   candlestick-1.js
-|                   candlestick-2.js
-|                   candlestick-3.js
-|                   candlestick-4.js
-|                   candlestick-5.js
-|                   column-chart-1.js
-|                   column-chart-2.js
-|                   column-chart-3.js
-|                   column-chart-4.js
-|                   column-chart-5.js
-|                   column-chart-6.js
-|                   column-chart-7.js
-|                   column-chart-8.js
-|                   column-chart-9.js
-|                   donut-1.js
-|                   donut-4.html
-|                   line-chart-1.js
-|                   line-chart-twoline.js
-|                   small-chart-1.js
-|                   small-chart-2.js
-|                   small-chart-3.js
-|                   small-chart-4.js
-|                   small-chart-5.js
-|                   small-chart-6.js
-|                   
+|               main.js
+|               
 +---config
 |       constants.php
 |       database.php
@@ -18342,14 +18314,113 @@ D:\MRWAYNE\WEB_DEV\TRUEPATHEXPRESS
 |   |           admin-forgot-password.php
 |   |           admin-login.php
 |   |           admin-register.php
+|   |           admin-reset-password.php
 |   |           
 |   \---public
 |           about.php
 |           contact.php
 |           index.php
 |           policy.php
-|           service.php
+|           services.php
 |           terms.php
 |           tracking.php
 |           
-\---uploads
++---uploads
+|   \---packages
+|           .htaccess
+|           
+\---vendor
+    |   autoload.php
+    |   
+    +---composer
+    |       autoload_classmap.php
+    |       autoload_namespaces.php
+    |       autoload_psr4.php
+    |       autoload_real.php
+    |       autoload_static.php
+    |       ClassLoader.php
+    |       installed.json
+    |       installed.php
+    |       InstalledVersions.php
+    |       LICENSE
+    |       platform_check.php
+    |       
+    \---phpmailer
+        \---phpmailer
+            |   COMMITMENT
+            |   composer.json
+            |   get_oauth_token.php
+            |   LICENSE
+            |   README.md
+            |   SECURITY.md
+            |   SMTPUTF8.md
+            |   VERSION
+            |   
+            +---language
+            |       phpmailer.lang-af.php
+            |       phpmailer.lang-ar.php
+            |       phpmailer.lang-as.php
+            |       phpmailer.lang-az.php
+            |       phpmailer.lang-ba.php
+            |       phpmailer.lang-be.php
+            |       phpmailer.lang-bg.php
+            |       phpmailer.lang-bn.php
+            |       phpmailer.lang-ca.php
+            |       phpmailer.lang-cs.php
+            |       phpmailer.lang-da.php
+            |       phpmailer.lang-de.php
+            |       phpmailer.lang-el.php
+            |       phpmailer.lang-eo.php
+            |       phpmailer.lang-es.php
+            |       phpmailer.lang-et.php
+            |       phpmailer.lang-fa.php
+            |       phpmailer.lang-fi.php
+            |       phpmailer.lang-fo.php
+            |       phpmailer.lang-fr.php
+            |       phpmailer.lang-gl.php
+            |       phpmailer.lang-he.php
+            |       phpmailer.lang-hi.php
+            |       phpmailer.lang-hr.php
+            |       phpmailer.lang-hu.php
+            |       phpmailer.lang-hy.php
+            |       phpmailer.lang-id.php
+            |       phpmailer.lang-it.php
+            |       phpmailer.lang-ja.php
+            |       phpmailer.lang-ka.php
+            |       phpmailer.lang-ko.php
+            |       phpmailer.lang-ku.php
+            |       phpmailer.lang-lt.php
+            |       phpmailer.lang-lv.php
+            |       phpmailer.lang-mg.php
+            |       phpmailer.lang-mn.php
+            |       phpmailer.lang-ms.php
+            |       phpmailer.lang-nb.php
+            |       phpmailer.lang-nl.php
+            |       phpmailer.lang-pl.php
+            |       phpmailer.lang-pt.php
+            |       phpmailer.lang-pt_br.php
+            |       phpmailer.lang-ro.php
+            |       phpmailer.lang-ru.php
+            |       phpmailer.lang-si.php
+            |       phpmailer.lang-sk.php
+            |       phpmailer.lang-sl.php
+            |       phpmailer.lang-sr.php
+            |       phpmailer.lang-sr_latn.php
+            |       phpmailer.lang-sv.php
+            |       phpmailer.lang-tl.php
+            |       phpmailer.lang-tr.php
+            |       phpmailer.lang-uk.php
+            |       phpmailer.lang-ur.php
+            |       phpmailer.lang-vi.php
+            |       phpmailer.lang-zh.php
+            |       phpmailer.lang-zh_cn.php
+            |       
+            \---src
+                    DSNConfigurator.php
+                    Exception.php
+                    OAuth.php
+                    OAuthTokenProvider.php
+                    PHPMailer.php
+                    POP3.php
+                    SMTP.php
+                    

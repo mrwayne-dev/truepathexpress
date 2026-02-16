@@ -3,7 +3,7 @@
 
 <!-- Hero -->
 <section class="hero hero--page">
-    <img src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=1920&q=80" alt="Package tracking" class="hero__bg">
+    <img src="/assets/images/sections/track-bg.png" alt="Package tracking" class="hero__bg">
     <div class="hero__overlay"></div>
     <div class="hero__content">
         <span class="hero__label"><i class="ph-bold ph-magnifying-glass"></i> Package Tracking</span>
@@ -21,7 +21,7 @@
             <form id="trackingForm">
                 <div class="form-group">
                     <label class="form-label" for="trackEmail">Email Address</label>
-                    <input type="email" id="trackEmail" name="email" class="form-input" placeholder="Enter your email address" required>
+                    <input type="email" id="trackEmail" name="email" class="form-input" placeholder="e.g. john.doe@example.com" required>
                 </div>
 
                 <div class="form-group">

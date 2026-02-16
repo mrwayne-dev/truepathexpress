@@ -61,10 +61,10 @@
         if (confirm('Log out?')) {
             fetch('/api/auth/logout.php')
                 .then(function () {
-                    window.location.href = '/pages/admin/auth/admin-login.php';
+                    window.location.href = '/admin.auth.login';
                 })
                 .catch(function () {
-                    window.location.href = '/pages/admin/auth/admin-login.php';
+                    window.location.href = '/admin.auth.login';
                 });
         }
     }

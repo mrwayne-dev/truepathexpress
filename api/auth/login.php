@@ -35,7 +35,22 @@ try {
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['email'] = $user['email'];
         $_SESSION['role'] = $user['role'];
-        
+
+        // Send login notification email
+        try {
+            require_once '../utilities/email_templates.php';
+            require_once '../../config/email.php';
+
+            $ipAddress = $_SERVER['REMOTE_ADDR'] ?? 'Unknown';
+            $loginTime = date('F j, Y g:i A');
+
+            $emailBody = getAdminLoginEmail($user['username'], $loginTime, $ipAddress);
+            $mailer = new Mailer();
+            $mailer->send($user['email'], 'Security Alert: New Login to Your TruePath Express Account', $emailBody);
+        } catch (Exception $e) {
+            error_log("Login notification email failed: " . $e->getMessage());
+        }
+
         echo json_encode(['success' => true, 'message' => 'Login successful']);
     } else {
         echo json_encode(['success' => false, 'message' => 'Invalid credentials']);

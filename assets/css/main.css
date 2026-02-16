@@ -431,10 +431,9 @@ p {
     color: var(--color-accent);
 }
 
-/* CTA Button Alignment */
+/* CTA Button - Hidden on desktop, shows in mobile menu */
 .navbar__cta {
-    display: flex;
-    align-items: center;
+    display: none;
 }
 
 /* Toggle (Mobile) */
@@ -443,13 +442,17 @@ p {
     flex-direction: column;
     gap: 5px;
     cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: var(--space-sm);
 }
 
 .navbar__toggle span {
     width: 24px;
-    height: 2px;
+    height: 3px;
     background: var(--color-primary);
     transition: var(--transition-base);
+    border-radius: 2px;
 }
 
 /* Optional shrink effect */
@@ -488,7 +491,7 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(180deg, rgba(22, 35, 42, 0.7) 0%, rgba(22, 35, 42, 0.9) 100%);
+    background: linear-gradient(180deg, rgba(22, 35, 42, 0.4) 0%, rgba(22, 35, 42, 0.4) 100%);
 }
 
 .hero__content {
@@ -773,7 +776,7 @@ p {
     overflow: hidden;
 }
 
-.split__image img {
+.split__image video {
     width: 100%;
     height: 100%;
     object-fit: cover;

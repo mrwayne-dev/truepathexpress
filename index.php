@@ -1,10 +1,3 @@
 <?php
-/**
- * Project: truepathexpress
- * Created by: mrwayne
- * Generated: 2026-02-15
- * 
- */
-
-header('Location: /pages/public/index.php');
-exit;
+// Optional: load global bootstrap logic here
+require_once __DIR__ . '/pages/public/index.php';

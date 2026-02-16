@@ -2,22 +2,22 @@
 /**
  * Project: truepathexpress
  * Created by: mrwayne
- * Generated: 2026-02-15
- * 
+ *
+ * Singleton database connection using PDO
  */
 
-require_once __DIR__ . '/env.php';
+require_once __DIR__ . '/constants.php';
 
 class Database {
     private static $instance = null;
     private $conn;
-    
+
     private function __construct() {
         $host = getenv('DB_HOST') ?: 'localhost';
         $dbname = getenv('DB_NAME');
         $username = getenv('DB_USER') ?: 'root';
         $password = getenv('DB_PASS') ?: '';
-        
+
         try {
             $this->conn = new PDO(
                 "mysql:host=$host;dbname=$dbname;charset=utf8mb4",
@@ -30,17 +30,20 @@ class Database {
                 ]
             );
         } catch (PDOException $e) {
-            die("Database connection failed: " . $e->getMessage());
+            if (APP_ENV === 'development') {
+                die("Database connection failed: " . $e->getMessage());
+            }
+            die("Database connection failed.");
         }
     }
-    
+
     public static function getInstance() {
         if (self::$instance === null) {
             self::$instance = new self();
         }
         return self::$instance;
     }
-    
+
     public function getConnection() {
         return $this->conn;
     }

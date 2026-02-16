@@ -1,0 +1,9 @@
+{
+    "name": "mrwayne/truepathexpress",
+    "description": "A modern consignment and logistics platform",
+    "type": "project",
+    "require": {
+        "php": ">=7.4",
+        "phpmailer/phpmailer": "^7.0"
+    }
+}

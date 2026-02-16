@@ -1,19 +1,22 @@
-# truepathexpress - Clean URLs
 RewriteEngine On
-RewriteBase /
 
-# Remove .php extension
+# Remove trailing slash (except directories)
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}\.php -f
-RewriteRule ^(.*)$ $1.php [L]
+RewriteRule ^(.+)/$ /$1 [R=301,L]
 
-# Route to index.php
+# =============================
+# ADMIN AUTH ROUTES (FIRST)
+# =============================
+
+RewriteRule ^admin/auth\.login/?$ pages/admin/auth/admin-login.php [L]
+RewriteRule ^admin/auth\.register/?$ pages/admin/auth/admin-register.php [L]
+RewriteRule ^admin/auth\.forgotpassword/?$ pages/admin/auth/admin-forgot-password.php [L]
+
+
+# =============================
+# FRONTEND CLEAN ROUTING
+# =============================
+
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ index.php [L,QSA]
-
-# Security
-<FilesMatch "^.(env|gitignore|htaccess)">
-    Order allow,deny
-    Deny from all
-</FilesMatch>
+RewriteRule ^([a-zA-Z0-9-]+)/?$ pages/public/$1.php [L]

@@ -3,6 +3,22 @@
  * Handles: loader, navbar, mobile menu, modals, toasts, animations
  */
 
+// ===========================
+// Throttle Helper Function
+// ===========================
+function throttle(func, wait) {
+    var timeout;
+    return function() {
+        var context = this, args = arguments;
+        if (!timeout) {
+            timeout = setTimeout(function() {
+                timeout = null;
+                func.apply(context, args);
+            }, wait);
+        }
+    };
+}
+
 document.addEventListener('DOMContentLoaded', function () {
 
     // ===========================
@@ -23,17 +39,17 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // ===========================
-    // Navbar Scroll
+    // Navbar Scroll (Throttled for Performance)
     // ===========================
     const navbar = document.getElementById('navbar');
     if (navbar) {
-        window.addEventListener('scroll', function () {
+        window.addEventListener('scroll', throttle(function () {
             if (window.scrollY > 50) {
                 navbar.classList.add('scrolled');
             } else {
                 navbar.classList.remove('scrolled');
             }
-        });
+        }, 100)); // Fire max once per 100ms
     }
 
     // ===========================

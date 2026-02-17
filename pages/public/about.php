@@ -3,7 +3,18 @@
 
 <!-- Hero -->
 <section class="hero hero--page">
-    <img src="/assets/images/sections/about-bg.png" alt="Logistics fleet" class="hero__bg">
+    <img
+        src="/assets/images/sections/about-bg.webp"
+        srcset="/assets/images/sections/about-bg-480w.webp 480w,
+                /assets/images/sections/about-bg-800w.webp 800w,
+                /assets/images/sections/about-bg-1200w.webp 1200w,
+                /assets/images/sections/about-bg.webp 1920w"
+        sizes="100vw"
+        alt="Logistics fleet"
+        class="hero__bg"
+        width="1920"
+        height="1080"
+        fetchpriority="high">
     <div class="hero__overlay"></div>
     <div class="hero__content">
         <span class="hero__label"><i class="ph-bold ph-info"></i> About TruePath Express</span>

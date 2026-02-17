@@ -3,7 +3,18 @@
 
 <!-- Hero -->
 <section class="hero hero--page">
-    <img src="/assets/images/sections/contact-bg.png" alt="Contact us" class="hero__bg">
+    <img
+        src="/assets/images/sections/contact-bg.webp"
+        srcset="/assets/images/sections/contact-bg-480w.webp 480w,
+                /assets/images/sections/contact-bg-800w.webp 800w,
+                /assets/images/sections/contact-bg-1200w.webp 1200w,
+                /assets/images/sections/contact-bg.webp 1920w"
+        sizes="100vw"
+        alt="Contact us"
+        class="hero__bg"
+        width="1920"
+        height="1080"
+        fetchpriority="high">
     <div class="hero__overlay"></div>
     <div class="hero__content">
         <span class="hero__label"><i class="ph-bold ph-chat-circle"></i> Get In Touch</span>
@@ -112,5 +123,5 @@
     </div>
 </section>
 
-<script src="/assets/js/contact.js"></script>
+<script src="/assets/js/contact.js" defer></script>
 <?php include_once __DIR__ . '/../../includes/footer.php'; ?>

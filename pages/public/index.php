@@ -3,7 +3,18 @@
 
 <!-- Hero Section -->
 <section class="hero">
-    <img src="/assets/images/sections/home-bg.png" alt="Logistics" class="hero__bg">
+    <img
+        src="/assets/images/sections/home-bg.webp"
+        srcset="/assets/images/sections/home-bg-480w.webp 480w,
+                /assets/images/sections/home-bg-800w.webp 800w,
+                /assets/images/sections/home-bg-1200w.webp 1200w,
+                /assets/images/sections/home-bg.webp 1920w"
+        sizes="100vw"
+        alt="Logistics"
+        class="hero__bg"
+        width="1920"
+        height="1080"
+        fetchpriority="high">
     <div class="hero__overlay"></div>
     <div class="hero__content">
         <span class="hero__label"><i class="ph-bold ph-package"></i> Global Logistics Solutions</span>

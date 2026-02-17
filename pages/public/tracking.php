@@ -3,7 +3,18 @@
 
 <!-- Hero -->
 <section class="hero hero--page">
-    <img src="/assets/images/sections/track-bg.png" alt="Package tracking" class="hero__bg">
+    <img
+        src="/assets/images/sections/track-bg.webp"
+        srcset="/assets/images/sections/track-bg-480w.webp 480w,
+                /assets/images/sections/track-bg-800w.webp 800w,
+                /assets/images/sections/track-bg-1200w.webp 1200w,
+                /assets/images/sections/track-bg.webp 1920w"
+        sizes="100vw"
+        alt="Package tracking"
+        class="hero__bg"
+        width="1920"
+        height="1080"
+        fetchpriority="high">
     <div class="hero__overlay"></div>
     <div class="hero__content">
         <span class="hero__label"><i class="ph-bold ph-magnifying-glass"></i> Package Tracking</span>
@@ -41,5 +52,5 @@
 <?php include_once __DIR__ . '/../../includes/payment-modal.php'; ?>
 <?php include_once __DIR__ . '/../../includes/track-order-modal.php'; ?>
 
-<script src="/assets/js/payment.js"></script>
+<script src="/assets/js/payment.js" defer></script>
 <?php include_once __DIR__ . '/../../includes/footer.php'; ?>

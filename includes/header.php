@@ -6,7 +6,7 @@
         <div class="container navbar__inner">
 
             <a href="/" class="navbar__logo">
-                <img src="/assets/images/logo/3.png" alt="TruePath Express Logo" class="navbar__logo-img">
+                <img src="/assets/images/logo/3.png" alt="TruePath Express Logo" class="navbar__logo-img" width="180" height="48">
                 <span class="navbar__logo-text">TruePath Express</span>
             </a>
 

@@ -13,12 +13,20 @@
     <meta name="apple-mobile-web-app-title" content="TruePath Express">
     <link rel="manifest" href="../../assets/favicon/site.webmanifest">
 
+    <!-- Preconnect to CDN for faster external resources -->
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
+    <link rel="dns-prefetch" href="https://unpkg.com">
+
+    <!-- Preload Critical Fonts -->
+    <link rel="preload" as="font" href="/assets/fonts/Coolvetica Rg.woff2" type="font/woff2" crossorigin>
+    <link rel="preload" as="font" href="/assets/fonts/Coolvetica Rg It.woff2" type="font/woff2" crossorigin>
+
     <!-- Phosphor Icons -->
     <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css">
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="stylesheet" href="/assets/css/responsive.css">
+    <link rel="stylesheet" href="/assets/css/main.min.css">
+    <link rel="stylesheet" href="/assets/css/responsive.min.css">
 </head>
 <body>
     <!-- Page Loader -->
